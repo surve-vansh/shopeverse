@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import { useApp } from "../../context/AppContext";
-function HeroSection({ onSection }) {
+export default function HeroSection({ onSection }) {
   return (
     <section id="hero" className="sv-hero">
       <div className="sv-hero-content">
@@ -11,7 +9,7 @@ function HeroSection({ onSection }) {
           the World
         </h1>
         <p className="sv-hero-desc">
-          Curated fashion for every soul — from timeless classics to contemporary edge. 
+          Curated fashion for every soul — from timeless classics to contemporary edge.
           Discover your style with ShopVerse.
         </p>
         <div className="sv-hero-btns">
@@ -41,5 +39,3 @@ function HeroSection({ onSection }) {
     </section>
   );
 }
-
-export default HeroSection;

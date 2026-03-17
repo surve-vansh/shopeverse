@@ -1,7 +1,9 @@
-import { useApp } from "../../context/AppContext";
 import { useState } from "react";
-function ContactSection() {
-  const { showNotif } = useApp();
+import { useAuth } from "../../context/AppContext";
+import { useUI } from "../../context/AppContext";
+
+export default function ContactSection() {
+  const { showNotif } = useUI();
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
 
   const handleSubmit = () => {
@@ -25,9 +27,9 @@ function ContactSection() {
             </p>
             {[
               { icon: "📍", label: "Address", val: "42 Fashion Boulevard, Mumbai 400001" },
-              { icon: "📧", label: "Email", val: "hello@shopverse.in" },
-              { icon: "📞", label: "Phone", val: "+91 98765 43210" },
-              { icon: "🕐", label: "Hours", val: "Mon–Sat, 9AM – 8PM IST" },
+              { icon: "📧", label: "Email",   val: "hello@shopverse.in" },
+              { icon: "📞", label: "Phone",   val: "+91 98765 43210" },
+              { icon: "🕐", label: "Hours",   val: "Mon–Sat, 9AM – 8PM IST" },
             ].map((item) => (
               <div key={item.label} className="sv-contact-item">
                 <div className="sv-contact-icon">{item.icon}</div>
@@ -46,7 +48,7 @@ function ContactSection() {
               </div>
               <input className="sv-input" placeholder="Subject" value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} />
               <textarea className="sv-input sv-textarea" placeholder="Your message *" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
-              <button className="sv-btn sv-btn-primary" style={{ padding: "0.85rem", fontSize: "0.95rem", width: "100%" }} onClick={handleSubmit}>
+              <button className="sv-btn sv-btn-primary" style={{ padding: "0.85rem", fontSize: "0.95rem" }} onClick={handleSubmit}>
                 Send Message →
               </button>
             </div>
@@ -56,4 +58,3 @@ function ContactSection() {
     </section>
   );
 }
-export default ContactSection;

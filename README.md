@@ -1,21 +1,40 @@
-<<<<<<< HEAD
-# React + Vite
+# ShopVerse 🛍️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium e-commerce SPA built with React + Vite.
 
-Currently, two official plugins are available:
+## Features
+- 🌗 Dark / Light theme toggle (persisted)
+- 📱 OTP-based phone login (3-step flow)
+- 🛒 Cart with quantity controls + localStorage sync
+- ❤️ Wishlist / favorites
+- 💳 Premium checkout (Address → Payment → Review → Success)
+- 📦 FakeStore API product listing with category filters
+- 📱 Fully responsive
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## React Compiler
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
 
-## Expanding the ESLint configuration
+```
+src/
+├── App.jsx
+├── main.jsx
+├── context/AppContext.jsx       # Global state + ThemeSync
+├── styles/global.css            # All CSS + dark mode variables
+├── components/
+│   ├── layout/Navbar.jsx + Footer.jsx
+│   ├── sections/                # Hero, Products, About, Contact
+│   ├── modals/                  # AuthModal (OTP), CartPanel, ProfileModal
+│   ├── product/ProductCard.jsx
+│   ├── ui/Notification.jsx
+│   └── checkout/CheckoutPage.jsx # 3-step premium checkout
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# shopeverse
-React eCommerce SPA with modern UI and responsive design
->>>>>>> e15d698c6563b5bd1b5228d4142cbced979e9c54
+## OTP Login (Dev Mode)
+Use phone number: any 10-digit number  
+OTP: **123456**

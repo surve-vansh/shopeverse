@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react";
-import { useApp } from "../../context/AppContext";
-function Footer({ onSection }) {
+export default function Footer({ onSection }) {
   return (
     <footer className="sv-footer">
       <div className="sv-footer-inner">
         <div className="sv-footer-top">
           <div className="sv-footer-brand">
             <div className="sv-footer-logo">Shop<span>Verse</span></div>
-            <p className="sv-footer-desc">Your one-stop destination for fashion, electronics & more. Style meets substance.</p>
+            <p className="sv-footer-desc">Your one-stop destination for fashion, electronics &amp; more. Style meets substance.</p>
             <div className="sv-footer-social">
               {["𝕏", "📘", "📸", "▶"].map((icon, i) => (
                 <div key={i} className="sv-social-btn">{icon}</div>
@@ -15,7 +13,7 @@ function Footer({ onSection }) {
             </div>
           </div>
           {[
-            { title: "Shop", links: ["Men's Fashion", "Women's Fashion", "Kids", "Electronics", "Jewelry", "New Arrivals"] },
+            { title: "Shop",    links: ["Men's Fashion", "Women's Fashion", "Kids", "Electronics", "Jewelry", "New Arrivals"] },
             { title: "Company", links: ["About Us", "Careers", "Press", "Blog", "Partners", "Sustainability"] },
             { title: "Support", links: ["Help Center", "Track Order", "Returns", "Size Guide", "Gift Cards", "Contact Us"] },
           ].map((col) => (
@@ -39,5 +37,3 @@ function Footer({ onSection }) {
     </footer>
   );
 }
-
-export default Footer;
